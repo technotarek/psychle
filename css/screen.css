@@ -1,0 +1,59 @@
+/* ---------------------------------------------------- */
+/* SLIDESHOW
+/* ---------------------------------------------------- */
+.carousel {
+width: 960px;
+background-color: #eee;
+border: 1px solid #ddd;}
+
+.carousel ul {
+margin: 0;
+padding: 0;
+list-style-type: none;
+height: 1%; /* IE fix */}
+
+.carousel ul:after {
+content: ".";
+clear: both;
+display: block;
+height: 0;
+visibility: hidden;}
+
+/* ---------------------------------------------------- */
+/* SLIDESHOW > SLIDES
+/* ---------------------------------------------------- */
+.carousel .slides {
+overflow: hidden;
+width: 960px;}
+
+.carousel .slides ul {
+/* total width of all slides -
+960px multiplied by 3 in this case */
+width: 2880px;}
+
+.carousel .slides li {
+width: 920px;
+float: left;
+padding: 20px;}
+
+.carousel .slides h2 {
+margin-top: 0;}
+
+/* ---------------------------------------------------- */
+/* SLIDESHOW > NAVIGATION
+/* ---------------------------------------------------- */
+.carousel .slides-nav {
+background-color: #ddd;
+border-top: 2px solid #ccc;}
+
+.carousel .slides-nav li {
+float: left;}
+
+.carousel .slides-nav li a {
+display: block;
+padding: 15px 20px;
+outline: none;}
+
+#slideshow-2 .slides li {
+     height:260px;width:400px;
+}

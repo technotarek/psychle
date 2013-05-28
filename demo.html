@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Psychle Carousel Demo (jQuery carousel plugin using Cycle effects)</title>
+    <link rel="stylesheet" href="css/screen.css">
+</head>
+<body>
+
+    <div id="slideshow" class="carousel">
+        <div class="slides">
+            <ul>
+                <li>
+                    <h2>Slide one</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Donec pretium arcu non velit. Phasellus adipiscing auctor
+                        lorem. Curabitur in urna ut purus consequat sollicitudin.
+                        Phasellus ut diam. Cras magna libero, tempor id, venenatis
+                        sit amet, venenatis et, dui.
+                    </p>
+                </li>
+                <li>
+                    <h2>Slide two</h2>
+                    <p>
+                        Nam ac nibh sit amet augue ultricies sagittis. Donec sit
+                        amet nunc. Vivamus lacinia, nisi ac tincidunt commodo, purus
+                        nisi condimentum urna, sit amet molestie odio dolor non lectus.
+                        Cum sociis natoque penatibus et magnis dis parturient montes,
+                        nascetur ridiculus mus.
+                    </p>
+                </li>
+                <li>
+                    <h2>Slide three</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Suspendisse adipiscing dui a nibh. Integer tristique lorem
+                        vitae massa. Etiam dapibus, eros sit amet euismod semper,
+                        felis erat congue lacus, sed aliquam metus libero sed elit.
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <ul class="slides-nav">
+            <li><a href="#">Slide one</a></li>
+            <li><a href="#">Slide two</a></li>
+            <li><a href="#">Slide three</a></li>
+        </ul>
+    </div>
+
+    <div id="slideshow-2" class="carousel">
+        <div class="slides">
+            <ul>
+                <li>
+                    <h2>Slide 1</h2>
+                    <img src="http://lorempixel.com/400/200/abstract/1">
+                </li>
+                <li>
+                    <h2>Slide 2</h2>
+                    <img src="http://lorempixel.com/400/200/abstract/2">
+                </li>
+                <li>
+                    <h2>Slide 3</h2>
+                    <img src="http://lorempixel.com/400/200/abstract/3">
+                </li>
+            </ul>
+        </div>
+        <ul class="slides-nav">
+            <li><a href="#">Slide one</a></li>
+            <li><a href="#">Slide two</a></li>
+            <li><a href="#">Slide three</a></li>
+        </ul>
+    </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/jquery.cycle.all.js"></script>
+<script src="js/psychle.js"></script>
+<script>
+$(document).ready(function() {
+
+    $('#slideshow').slideshow({selector:'#slideshow',fx:'scrollLeft'});
+    $('#slideshow-2').slideshow({selector:'#slideshow-2',fx:'scrollUp'});
+
+});
+</script>
+</body>
+</html>
