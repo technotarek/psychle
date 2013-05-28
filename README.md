@@ -5,7 +5,7 @@ A jquery-based carousel / slideshow that uses effects from the [jQuery Cycle plu
 ######Why another carousel plugin?
 If you look at the J. Smith/Nettuts source that inspired me, you'll see that the code dates back to 2009. While it seems like a new carousel plugin is released every day, I've found this one to be among the simplest and most customizable. I've turned back to it and used it in countless projects.
 
-And now that it's available in this plugin format, its even easier to use. Where as the original Nettuts code required altering the source to change options, several options can now be specified in a conventional plugin manner. In particular, you can easily specify any of the available transtion effects offered by the jQuery Cycle plugin. Plus, the plugin allows multiple unique instances of a carsousel on a single page, which was not possible with the original version.
+And now that it's available in this plugin format, its even easier to use. Whereas the original Nettuts code required altering the source to change options, several options can now be specified in a conventional plugin manner. In particular, you can easily specify any of the available transtion effects offered by the jQuery Cycle plugin. Plus, the plugin allows multiple unique instances of a carsousel on a single page, which was not possible with the original version.
 
 ##Demo
 
