@@ -1,3 +1,8 @@
+/*
+* Psychle.js
+* @version      1.0
+* @copyright    Tarek Anandan (http://www.technotarek.com)
+*/
 ;(function($, undefined) {
 
     $.fn.slideshow  = function(options){
@@ -7,8 +12,6 @@
 
             var settings = jQuery.extend({
                 selector: element,
-                context: false,
-                tabs: false,
                 timeout: 6000,       // time before next slide appears (in ms)
                 slideSpeed: 1000,   // time it takes to slide in each slide (in ms)
                 tabSpeed: 300,      // time it takes to slide in each slide (in ms) when clicking through tabs
@@ -25,8 +28,6 @@
             $slideshow = {
 
                 init: function(settings) {
-
-                    console.log(settings);
 
                     // set tabs to current hard coded navigation items
                     this.tabs = $(settings.selector+' ul.slides-nav li');
@@ -81,6 +82,6 @@
 
         });
 
-    }
+    };
 
 })(jQuery);

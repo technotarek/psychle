@@ -1,10 +1,30 @@
-#psychle
+#Psychle
 
-A jquery-based carousel / slideshow that uses fx from the jquery cycle plugin.
+A jquery-based carousel / slideshow that uses effects from the [jQuery Cycle plugin](http://jquery.malsup.com/cycle/). The plugin is based on code developed by [Jenna Smith](http://net.tutsplus.com/author/jennasmith/) published on [Nettuts](http://net.tutsplus.com/tutorials/javascript-ajax/building-an-auto-scrolling-slideshow-that-works-with-and-without-javascript/).
 
-## markup
+######Why another carousel plugin?
+If you look at the J. Smith/Nettuts source that inspired me, you'll see that the code dates back to 2009. While it seems like a new carousel plugin is released every day, I've found this one to be among the simplest and most customizable. I've turned back to it and used it in countless projects.
 
-    <div id="slideshow" class="carousel">
+And now that it's available in this plugin format, its even easier to use. Where as the original Nettuts code required altering the source to change options, several options can now be specified in a conventional plugin manner. In particular, you can easily specify any of the available transtion effects offered by the jQuery Cycle plugin. Plus, the plugin allows multiple unique instances of a carsousel on a single page, which was not possible with the original version.
+
+##Demo
+
+[Simple Working Demo](http://www.technotarek.com/psychle/demo.html).
+
+It's up to you to customize it! I've used it on a ton of projects including [Bold Approach](http://www.boldapproach.org), [Charles Lewis](http://www.charles-lewis.com), [ReadyNation](http://readynation.org) and many others.
+
+##Usage
+
+Call jQuery, the jQuery Cycle plugin, and then psychle.js. Also reference the included CSS or similar. See below for the proper markup structure and instantiation.
+
+##Markup
+
+Wrap your markup in an element with a unique ID. Present the individual slides as part of an unordered list with each item/slide as an LI element. Wrap the slides inside of a div with a class of 'slides'. If needed, wrap the navigation in another unordred list with a class of 'slides-nav'.
+
+If you run into problems that you suspect are markup related, I recommend checking out the original Nettuts post referenced above.
+
+
+    <div id="my-slideshow" class="carousel">
         <div class="slides">
             <ul>
                 <li>
@@ -47,4 +67,34 @@ A jquery-based carousel / slideshow that uses fx from the jquery cycle plugin.
 
 ##Instantiate
 
-    $('#slideshow').slideshow({selector:'#slideshow',fx:'scrollLeft'});
+Instantiate as many times as needed on elements with unique IDs.
+
+    $('#my-slideshow').slideshow();
+    $('#my-slideshow').slideshow();
+
+## Options
+
+Set options on a instance by instance basis, or or specify no options and use the defaults.
+
+#### Effects (fx) Options
+
+Use any of the effects from the jQuery Cycle plugin. See [http://jquery.malsup.com/cycle/browser.html](http://jquery.malsup.com/cycle/browser.html).
+
+    $('#my-slideshow').slideshow(
+        {
+            fx: 'toss'
+        }
+    );
+
+#### Other Options
+
+Specify any of these additional options. The values below represent the plugins defaults.
+
+    $('#my-slideshow').slideshow(
+        {
+            timeout: 6000,       // time before next slide appears (in ms)
+            slideSpeed: 1000,   // time it takes to slide in each slide (in ms)
+            tabSpeed: 300,      // time it takes to slide in each slide (in ms) when clicking through tabs
+            fx: 'scrollLeft'    // transition effect from jquery cycle plugin
+        }
+    );

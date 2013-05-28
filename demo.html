@@ -48,6 +48,8 @@
         </ul>
     </div>
 
+    <p>&nbsp;</p>
+
     <div id="slideshow-2" class="carousel">
         <div class="slides">
             <ul>
@@ -74,12 +76,12 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/jquery.cycle.all.js"></script>
-<script src="js/psychle.js"></script>
+<script src="js/psychle.min.js"></script>
 <script>
 $(document).ready(function() {
 
-    $('#slideshow').slideshow({selector:'#slideshow',fx:'scrollLeft'});
-    $('#slideshow-2').slideshow({fx:'scrollUp'});
+    $('#slideshow').slideshow({fx:'scrollLeft'});
+    $('#slideshow-2').slideshow({fx:'toss'});
 
 });
 </script>
