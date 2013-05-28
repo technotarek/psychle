@@ -1,10 +1,12 @@
 ;(function($, undefined) {
 
-    var settings;
     $.fn.slideshow  = function(options){
         return this.each(function(){
-            settings = jQuery.extend({
-                selector: '#slideshow',
+
+            var element = '#'+$(this).attr('id');
+
+            var settings = jQuery.extend({
+                selector: element,
                 context: false,
                 tabs: false,
                 timeout: 6000,       // time before next slide appears (in ms)
@@ -13,44 +15,42 @@
                 fx: 'scrollLeft',   // the slide effect to use
             }, options);
 
+            $(function() {
+                // add a 'js' class to the body
+                $('body').addClass('js');
+                $.extend($slideshow,settings);
+                $slideshow.init(settings);
+            });
+
             $slideshow = {
 
-                instantiate: function(options){
+                init: function(settings) {
 
-                    // if statement used to stop Cycle plugin from terminating if selector doesn't exist on page
-                    // useful for when you instantiate several slideshows that don't appear on every page
+                    console.log(settings);
 
-                        $.extend($slideshow,options);
+                    // set tabs to current hard coded navigation items
+                    this.tabs = $(settings.selector+' ul.slides-nav li');
 
-                        this.init();
+                    // remove hard coded navigation items from DOM
+                    // because they aren't hooked up to jQuery cycle
+                    this.tabs.remove();
+
+                    // prepare slideshow and jQuery cycle tabs
+                    this.prepareSlideshow(settings);
+
                 },
 
-                init: function() {
+                prepareSlideshow: function(settings,tabs) {
 
-                        // set the context to help speed up selectors/improve performance
-                        //this.context = $(selector);
-
-                        // set tabs to current hard coded navigation items
-                        this.tabs = $('ul.slides-nav li');
-
-                        // remove hard coded navigation items from DOM
-                        // because they aren't hooked up to jQuery cycle
-                        this.tabs.remove();
-
-                        // prepare slideshow and jQuery cycle tabs
-                        this.prepareSlideshow();
-                },
-
-                prepareSlideshow: function(context,tabs) {
                     // initialise the jquery cycle plugin -
                     // for information on the options set below go to:
                     // http://malsup.com/jquery/cycle/options.html
-                    $('div.slides > ul').cycle({
+                    $(settings.selector+' div.slides > ul').cycle({
                         fx: $slideshow.fx,
                         timeout: $slideshow.timeout,
                         speed: $slideshow.slideSpeed,
                         fastOnEvent: $slideshow.tabSpeed,
-                        pager: $('ul.slides-nav'),
+                        pager: $(settings.selector+' ul.slides-nav'),
                         pagerAnchorBuilder: $slideshow.prepareTabs,
                         before: $slideshow.activateTab,
                         pauseOnPagerHover: true,
@@ -78,15 +78,6 @@
                     }
                 }
             };
-
-
-            $(function() {
-                // add a 'js' class to the body
-                $('body').addClass('js');
-
-                 $slideshow.instantiate(settings);
-
-            });
 
         });
 
