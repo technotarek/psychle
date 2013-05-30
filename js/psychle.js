@@ -1,11 +1,11 @@
 /*
 * Psychle.js
-* @version      1.0
+* @version      1.0.1
 * @copyright    Tarek Anandan (http://www.technotarek.com)
 */
 ;(function($, undefined) {
 
-    $.fn.slideshow  = function(options){
+    $.fn.psychle  = function(options){
         return this.each(function(){
 
             var element = '#'+$(this).attr('id');
@@ -21,11 +21,11 @@
             $(function() {
                 // add a 'js' class to the body
                 $('body').addClass('js');
-                $.extend($slideshow,settings);
-                $slideshow.init(settings);
+                $.extend($psychle,settings);
+                $psychle.init(settings);
             });
 
-            $slideshow = {
+            $psychle = {
 
                 init: function(settings) {
 
@@ -47,13 +47,13 @@
                     // for information on the options set below go to:
                     // http://malsup.com/jquery/cycle/options.html
                     $(settings.selector+' div.slides > ul').cycle({
-                        fx: $slideshow.fx,
-                        timeout: $slideshow.timeout,
-                        speed: $slideshow.slideSpeed,
-                        fastOnEvent: $slideshow.tabSpeed,
+                        fx: $psychle.fx,
+                        timeout: $psychle.timeout,
+                        speed: $psychle.slideSpeed,
+                        fastOnEvent: $psychle.tabSpeed,
                         pager: $(settings.selector+' ul.slides-nav'),
-                        pagerAnchorBuilder: $slideshow.prepareTabs,
-                        before: $slideshow.activateTab,
+                        pagerAnchorBuilder: $psychle.prepareTabs,
+                        before: $psychle.activateTab,
                         pauseOnPagerHover: true,
                         pause: true
                     });
@@ -62,7 +62,7 @@
                 prepareTabs: function(i, slide) {
                     // return markup from hardcoded tabs for use as jQuery cycle tabs
                     // (attaches necessary jQuery cycle events to tabs)
-                    return $slideshow.tabs.eq(i);
+                    return $psychle.tabs.eq(i);
                 },
 
                 activateTab: function(currentSlide, nextSlide) {
@@ -72,7 +72,7 @@
                     // if there is an active tab
                     if(activeTab.length) {
                         // remove active styling from all other tabs
-                        $slideshow.tabs.removeClass('on');
+                        $psychle.tabs.removeClass('on');
 
                         // add active styling to active button
                         activeTab.parent().addClass('on');

@@ -78,16 +78,22 @@
             <li><a href="#">Slide two</a></li>
             <li><a href="#">Slide three</a></li>
         </ul>
+        <button id="test">test</button>
     </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/jquery.cycle.all.js"></script>
-<script src="js/psychle.min.js"></script>
+<script src="js/psychle.js"></script>
 <script>
 $(document).ready(function() {
 
-    $('#slideshow').slideshow({fx:'scrollLeft'});
-    $('#slideshow-2').slideshow({fx:'toss'});
+    $('#slideshow').psychle({timeout:0});
+    $('#slideshow-2').psychle({fx:'toss'});
+
+    $('test').click(function()
+    {
+        $('#slideshow').psychle('prev');
+    });
 
 });
 </script>

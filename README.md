@@ -69,8 +69,8 @@ If you run into problems that you suspect are markup related, I recommend checki
 
 Instantiate as many times as needed on elements with unique IDs.
 
-    $('#my-slideshow').slideshow();
-    $('#my-other-slideshow').slideshow();
+    $('#my-slideshow').psychle();
+    $('#my-other-slideshow').psychle();
 
 ## Options
 
@@ -80,7 +80,7 @@ Set options on a instance by instance basis, or or specify no options and use th
 
 Use any of the effects from the jQuery Cycle plugin. See [http://jquery.malsup.com/cycle/browser.html](http://jquery.malsup.com/cycle/browser.html).
 
-    $('#my-slideshow').slideshow(
+    $('#my-slideshow').psychle(
         {
             fx: 'toss'
         }
@@ -90,9 +90,9 @@ Use any of the effects from the jQuery Cycle plugin. See [http://jquery.malsup.c
 
 Specify any of these additional options. The values below represent the plugins defaults.
 
-    $('#my-slideshow').slideshow(
+    $('#my-slideshow').psychle(
         {
-            timeout: 6000,       // time before next slide appears (in ms)
+            timeout: 6000,       // time before next slide appears (in ms), set to 0 to disable auto sliding
             slideSpeed: 1000,   // time it takes to slide in each slide (in ms)
             tabSpeed: 300,      // time it takes to slide in each slide (in ms) when clicking through tabs
             fx: 'scrollLeft'    // transition effect from jquery cycle plugin
